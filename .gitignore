@@ -22,3 +22,7 @@
 /nbdist/
 /.nb-gradle/
 /data
+.classpath
+.project
+
+.mvn
