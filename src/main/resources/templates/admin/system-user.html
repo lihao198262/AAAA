@@ -94,26 +94,9 @@
 									<input class="easyui-textbox" type="text" name="name" data-options="required:true"></input>
 								</td>
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-								<td>性别:</td>
+								<td></td>
 								<td>
-									<input class="easyui-combobox" name=sex
-										data-options="
-							required:true,
-							valueField: 'id',
-							textField: 'name',
-							method: 'get',
-							url: '/common/loadAllSysSex',
-										    
-							onLoadSuccess: function () { 
-								var val = $(this).combobox('getData'); 
-								for (var item in val[0]) {  
-									if (item == 'id') {  
-										$(this).combobox('select', val[0][item]);  
-									}  
-								}  
-							}
-											
-						" />
+									
 								</td>
 							</tr>
 

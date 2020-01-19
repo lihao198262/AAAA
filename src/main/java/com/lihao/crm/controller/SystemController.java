@@ -17,11 +17,11 @@ public class SystemController {
 
 	@GetMapping("/")
 	private String root() {
-		return "index";
+		return "library/library";
 	}
 
 	@GetMapping("/index")
 	private String index() {
-		return "index";
+		return "library/library";
 	}
 }

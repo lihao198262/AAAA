@@ -54,6 +54,10 @@ h6 {
 	font-size: 30px;
 }
 
+h4 {
+	font-size: 20px;
+}
+
 html,
 body {width: 1024px; height: 100%; padding: 0; margin: 0; margin-left: auto; margin-right: auto;}
 .outer { height: 100%; padding: 65px 0 0; box-sizing: border-box ; position: relative; }

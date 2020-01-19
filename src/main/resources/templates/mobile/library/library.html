@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="base :: common_header(~{::title},_)">
+<meta charset="UTF-8">
+<title th:text="#{company.name} + #{app.version}">XXX管理系统</title>
+</head>
+<body>
+
+	<div class="outer">
+		<div class="A">
+			<div th:insert="base :: header"
+				style="width: 1024px; margin-left: auto; margin-right: auto"></div>
+		</div>
+		<div class="B">
+			<script>
+				function book_query() {
+					$('#bookQuery').submit();
+				}
+			</script>
+			<div>
+				<form id="bookQuery" th:action="@{/library/bookQuery}" method="get">
+					<table>
+						<tr>
+							<td>图书查询:</td>
+							<td><input class="easyui-textbox" type="text"
+								name="bookName" data-options="required:true"></input></td>
+							<td><a class="easyui-linkbutton"
+								data-options="iconCls:'icon-search'" onclick="book_query()">查询</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div>
+				<h4>图书查询说明</h4>
+
+				<h4>一、星洋学校三（9）班图书馆为本班学生提供了个性化的服务空间。</h4>
+				<h4>二、请输入书名进入系统查询。</h4>
+				<h4>三、学生找到自己所需书目，点击进入，会显示出图书是否在班级书架存放，状态可借阅，还是已被班级某位同学借阅，为其借阅提供支持。</h4>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+</html>

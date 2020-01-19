@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="base :: common_header(~{::title},_)">
+<meta charset="UTF-8">
+<title th:text="#{company.name} + #{app.version}">XXX管理系统</title>
+</head>
+<body>
+
+	<div class="outer">
+		<div class="A">
+			<div th:insert="base :: header"
+				style="width: 1024px; margin-left: auto; margin-right: auto"></div>
+		</div>
+		<div class="B">
+			<script>
+				function book_query() {
+					$('#bookQuery').submit();
+				}
+			</script>
+			<div>
+				<form id="bookQuery" th:action="@{/library/bookQuery}" method="get">
+					<table>
+						<tr>
+							<td>图书查询:</td>
+							<td><input class="easyui-textbox" type="text"
+								name="bookName" data-options="required:true"></input></td>
+							<td><a class="easyui-linkbutton"
+								data-options="iconCls:'icon-search'" onclick="book_query()">查询</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div>
+				<div th:each="i, stat : ${books}">
+					<h2>
+						<span th:utext="${i.name}"></span>
+					</h2>
+					<table>
+						<tr>
+							<td><img th:src="@{/book/{filename}(filename=${i.picName})}"
+								width="150" height="150" /></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td><h4><span th:utext="${i.Position}"></span></h4></td>
+						</tr>
+
+					</table>
+					<div></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
